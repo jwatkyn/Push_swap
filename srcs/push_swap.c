@@ -14,5 +14,23 @@
 
 int		main(int argc, char **argv)
 {
+	t_list	*stack_a;
+	t_list	*stack_b;
+	t_list	*steps;
+	t_ps	*info;
 
+	if (argc > 1)
+	{
+		info = (*info)malloc(sizeof(info))
+		info->A = stack_a;
+		info->B = stack_b;
+		ft_checkinfo((char**)argv[1], argc - 1);
+		ft_getinfo((char**)argv[1], argc - 1, info);
+		if (info->flag < 8)
+			bruteforce(info);
+		else
+			ft_sort(info);
+		free(info)
+	}
+	exit (0);
 }
