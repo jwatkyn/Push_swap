@@ -4,7 +4,8 @@ NAMEP = push_swap
 
 SRCSC = srcs/checker.c
 
-SRCSP = srcs/push_swap.c
+SRCSP = srcs/push_swap.c \
+		srcs/parsing.c
 
 FLAGS = -Wall -Wextra -Werror -I./includes
 
@@ -26,7 +27,7 @@ $(NAMEP): $(OBJSP)
 	@echo "Push_swap done"
 
 %.o: %.c
-	@gcc $(FLAGS) -c $< -o $@ -I./incldues
+	@gcc $(FLAGS) -c $< -o $@ -I./includes
 
 clean:
 	@make clean -C libft

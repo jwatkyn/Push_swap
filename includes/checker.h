@@ -13,7 +13,7 @@
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include "libft.h"
+# include "../libft/includes/libft.h"
 # include "push_swap.h"
 
 #endif

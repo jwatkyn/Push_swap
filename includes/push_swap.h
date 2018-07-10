@@ -13,20 +13,26 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
-# include "checker.h"
+# define ERROR ft_putendl_fd("ERROR", 2);
 
-define struct	s_ps
+# include "../libft/includes/libft.h"
+# include "checker.h"
+# include <stdio.h>
+
+typedef struct	s_ps
 {
+	char	**raw;
 	t_list	A;
 	t_list	B;
+	t_list	steps;
 	int		flag;
-
+	int		count;
 }				t_ps;
 
-void			ft_getinfo(char** info, int argc, t_ps *info);
-void			ft_checkinfo(char** info, int argc);
-void			bruteforce(t_ps info);
-void			ft_sort(t_ps info);
+void			ft_getinfo(char** tab, t_ps *info);
+void			bruteforce(t_ps *info);
+void			ft_sort(t_ps *info);
+void			ft_checkinfo(t_ps *info, char **tab, int count);
+int				ft_countwords(char const *s, char c);
 
 #endif
