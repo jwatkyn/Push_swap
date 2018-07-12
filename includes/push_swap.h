@@ -23,7 +23,9 @@ typedef struct	s_ps
 {
 	char	**raw;
 	t_list	A;
+	int		sizea;
 	t_list	B;
+	int		sizeb;
 	t_list	steps;
 	int		flag;
 	int		count;
