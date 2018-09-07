@@ -1,38 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   issorted.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwatkyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/02 08:41:39 by jwatkyn           #+#    #+#             */
-/*   Updated: 2018/07/02 08:41:40 by jwatkyn          ###   ########.fr       */
+/*   Created: 2018/07/09 13:55:04 by jwatkyn           #+#    #+#             */
+/*   Updated: 2018/07/09 14:03:06 by jwatkyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int argc, char **argv)
+int		is_sorted2(t_stack *head)
 {
-	t_stack	*A;
-	t_stack *B;
+	t_stack	*temp;
 
-	if (argc >= 2)
+	while (head->next)
 	{
-		B = NULL;
-		A = NULL;
-		A = ft_getinfo(argv, argc, A);
-		if (A->next == NULL)
-			exit(0);
-		if (is_sorted(A, 1))
-			exit(0);
-		if (argc < 5)
-			A = quicksort(A, B);
-		else
-			A = sort(A, B);
+		temp = head->next;
+		if (head->content < temp->content)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
+
+int		is_sorted(t_stack *head, int dir)
+{
+	t_stack	*temp;
+
+	if (dir)
+	{
+		while (head->next)
+		{
+			temp = head->next;
+			if (head->content > temp->content)
+				return (0);
+			head = head->next;
+		}
 	}
 	else
-		ERROR();
-	free_list(A);
-	exit (0);
+		return (is_sorted2(head));
+	return (1);
 }

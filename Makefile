@@ -2,10 +2,23 @@ NAMEC = checker
 
 NAMEP = push_swap
 
-SRCSC = srcs/checker.c
+SRCSC = srcs/checker.c \
+		srcs/parsing.c \
+		srcs/stack_ops.c \
+		srcs/error.c \
+		srcs/functionsC.c \
+		srcs/issorted.c \
+		srcs/Cmoves.c \
+		srcs/free_list.c
 
 SRCSP = srcs/push_swap.c \
-		srcs/parsing.c
+		srcs/parsing.c \
+		srcs/error.c \
+		srcs/stack_ops.c \
+		srcs/issorted.c \
+		srcs/functionsPS.c \
+		srcs/sorting.c \
+		srcs/free_list.c
 
 FLAGS = -Wall -Wextra -Werror -I./includes
 

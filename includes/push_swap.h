@@ -13,28 +13,55 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define ERROR ft_putendl_fd("ERROR", 2);
-
 # include "../libft/includes/libft.h"
 # include "checker.h"
 # include <stdio.h>
 
-typedef struct	s_ps
-{
-	char	**raw;
-	t_list	A;
-	int		sizea;
-	t_list	B;
-	int		sizeb;
-	t_list	steps;
-	int		flag;
-	int		count;
-}				t_ps;
+# define MAX 2147483647
+# define MIN -2147483648
+# define ABS(x) (x < 0 ? -x : x)
 
-void			ft_getinfo(char** tab, t_ps *info);
-void			bruteforce(t_ps *info);
-void			ft_sort(t_ps *info);
-void			ft_checkinfo(t_ps *info, char **tab, int count);
-int				ft_countwords(char const *s, char c);
+# ifndef T_STACK_H
+#  define T_STACK_H
+typedef struct		s_stack
+{
+	int				content;
+	struct s_stack	*next;
+}					t_stack;
+# endif
+
+typedef struct		s_info
+{
+	int				min_count;
+	int				dir;
+	int				max;
+	int				min;
+}					t_info;
+
+t_stack			*ft_getinfo(char** tab, int count, t_stack *A);
+int				*ft_checkinfo(char **tab, int count);
+int				*ft_intarray(char **tab, int count);
+void			ERROR(void);
+t_stack			*add_end(t_stack *head, int val);
+t_stack			*create(int val);
+int				is_sorted(t_stack *head, int dir);
+t_stack			*add_begin(t_stack *head, int val);
+t_stack			*del_end(t_stack *head);
+t_stack			*del_begin(t_stack *head);
+t_stack			*sort(t_stack *A, t_stack *B);
+t_stack			*ft_sa(t_stack *A);
+t_stack			*ft_sb(t_stack *B);
+t_stack			*ft_ss(t_stack **A, t_stack *B);
+t_stack			*ft_pa(t_stack *A, t_stack **B);
+t_stack			*ft_pb(t_stack *B, t_stack **A);
+t_stack			*ft_ra(t_stack *A);
+t_stack			*ft_rb(t_stack *B);
+t_stack			*ft_rr(t_stack **A, t_stack *B);
+t_stack			*ft_rra(t_stack *A);
+t_stack			*ft_rrb(t_stack *B);
+t_stack			*ft_rrr(t_stack **A, t_stack *B);
+t_stack			*quicksort(t_stack *A, t_stack *B);
+void			free_array(char **array);
+void			free_list(t_stack *A);
 
 #endif

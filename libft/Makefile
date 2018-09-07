@@ -70,7 +70,8 @@ SRCS = ft_atoi.c \
 	ft_dlstnew.c \
 	ft_dlstdelone.c \
 	ft_dlstdel.c \
-	ft_dlstadd.c
+	ft_dlstadd.c \
+	ft_longatoi.c
 
 OBJS = ${SRCS:.c=.o}
 
