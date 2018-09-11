@@ -42,10 +42,9 @@ t_info	*get_minmax(t_info *info, t_stack *A)
 t_stack	*sort(t_stack *A, t_stack *B)
 {
 	t_info	*info;
-	int 	count = 10;
 
 	info = (t_info *)malloc(sizeof(t_info));
-	while ((!is_sorted(A, 1) || B == NULL) && count--)
+	while (!is_sorted(A, 1) || B == NULL)
 	{
 		info = (get_minmax(info, A));
 		if (info->min == A->next->content)

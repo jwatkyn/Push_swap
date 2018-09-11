@@ -7,6 +7,8 @@ SRCSC = srcs/checker.c \
 		srcs/stack_ops.c \
 		srcs/error.c \
 		srcs/functionsC.c \
+		srcs/functionsC2.c \
+		srcs/functionsC3.c \
 		srcs/issorted.c \
 		srcs/Cmoves.c \
 		srcs/free_list.c
@@ -17,6 +19,8 @@ SRCSP = srcs/push_swap.c \
 		srcs/stack_ops.c \
 		srcs/issorted.c \
 		srcs/functionsPS.c \
+		srcs/functionsPS2.c \
+		srcs/functionsPS1.c \
 		srcs/sorting.c \
 		srcs/free_list.c
 
