@@ -23,8 +23,27 @@ typedef struct		s_stack
 	int				content;
 	struct s_stack	*next;
 }					t_stack;
+
+typedef struct		s_moves
+{
+	char			*move;
+	struct s_moves	*next;
+}					t_moves;
+
+typedef struct		s_info
+{
+	int				min;
+	int				max;
+	int				min_count;
+	int				dir;
+	int				sizeA;
+	int				sizeB;
+	t_stack			*A;
+	t_stack			*B;
+	t_moves			*moves;
+}					t_info;
 # endif
 
-t_stack	*complete_moves(t_stack *A, t_stack *B);
+t_stack	*complete_moves(t_stack *A, t_stack *B, t_info *info);
 
 #endif

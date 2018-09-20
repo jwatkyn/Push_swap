@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-t_stack	*ft_rra(t_stack *A)
+t_stack	*ft_rra(t_stack *A, t_info *info)
 {
 	int		val;
 	t_stack	*temp;
 
-	ft_putendl("rra");
+	ft_add_move(info, "rra");
 	temp = A;
 	while (temp->next)
 		temp = temp->next;
@@ -27,12 +27,12 @@ t_stack	*ft_rra(t_stack *A)
 	return (A);
 }
 
-t_stack	*ft_rrb(t_stack *B)
+t_stack	*ft_rrb(t_stack *B, t_info *info)
 {
 	int		val;
 	t_stack	*temp;
 
-	ft_putendl("rrb");
+	ft_add_move(info, "rrb");
 	temp = B;
 	while (temp->next)
 		temp = temp->next;
@@ -42,12 +42,12 @@ t_stack	*ft_rrb(t_stack *B)
 	return (B);
 }
 
-t_stack	*ft_rrr(t_stack **A, t_stack *B)
+t_stack	*ft_rrr(t_stack **A, t_stack *B, t_info *info)
 {
 	int		val;
 	t_stack	*temp;
 
-	ft_putendl("rrr");
+	ft_add_move(info, "rrr");
 	temp = *A;
 	while (temp->next)
 		temp = temp->next;

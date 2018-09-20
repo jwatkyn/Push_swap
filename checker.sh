@@ -1,5 +1,5 @@
 num=5
-case=100
+case=50
 limit=12
 
 exceed=0

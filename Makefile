@@ -11,7 +11,8 @@ SRCSC = srcs/checker.c \
 		srcs/functionsC3.c \
 		srcs/issorted.c \
 		srcs/Cmoves.c \
-		srcs/free_list.c
+		srcs/free_list.c \
+		srcs/print_stacks.c
 
 SRCSP = srcs/push_swap.c \
 		srcs/parsing.c \
@@ -22,7 +23,9 @@ SRCSP = srcs/push_swap.c \
 		srcs/functionsPS2.c \
 		srcs/functionsPS1.c \
 		srcs/sorting.c \
-		srcs/free_list.c
+		srcs/free_list.c \
+		srcs/tools2.c \
+		srcs/long_sort.c
 
 FLAGS = -Wall -Wextra -Werror -I./includes
 

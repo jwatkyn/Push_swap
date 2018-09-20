@@ -12,23 +12,27 @@
 
 #include "push_swap.h"
 
-t_stack	*ft_rb(t_stack *B)
+t_stack	*ft_rb(t_stack *B, t_info *info)
 {
+	if (!info)
+		return (NULL);
 	B = add_end(B, B->content);
 	B = del_begin(B);
 	return (B);	
 }
 
-t_stack	*ft_ra(t_stack *A)
+t_stack	*ft_ra(t_stack *A, t_info *info)
 {
+	if (!info)
+		return (NULL);
 	A = add_end(A, A->content);
 	A = del_begin(A);
 	return (A);
 }
 
-t_stack	*ft_rr(t_stack **A, t_stack *B)
+t_stack	*ft_rr(t_stack **A, t_stack *B, t_info *info)
 {
-	*A = ft_ra(*A);
-	B = ft_rb(B);
+	*A = ft_ra(*A, info);
+	B = ft_rb(B, info);
 	return (B);
 }

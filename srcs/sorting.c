@@ -39,46 +39,43 @@ t_info	*get_minmax(t_info *info, t_stack *A)
 	return (info);
 }
 
-t_stack	*sort(t_stack *A, t_stack *B)
+t_stack	*sort(t_stack *A, t_stack *B, t_info *info)
 {
-	t_info	*info;
-
-	info = (t_info *)malloc(sizeof(t_info));
 	while (!is_sorted(A, 1) || B == NULL)
 	{
 		info = (get_minmax(info, A));
 		if (info->min == A->next->content)
-			A = ft_sa(A);
+			A = ft_sa(A, info);
 		else
 			while (info->min_count-- -1 > 0)
-				A = (info->dir == -1 ? ft_ra(A) : ft_rra(A));
+				A = (info->dir == -1 ? ft_ra(A, info) : ft_rra(A, info));
 		if (is_sorted(A, 1) && B == NULL)
 			break ;
 		if (B != NULL && is_sorted(A, 1) && is_sorted(B, 0))
 			break ;
-		B = ft_pb(B, &A);
+		B = ft_pb(B, &A, &info);
 	}
 	while (B != NULL)
-		A = ft_pa(A, &B);
+		A = ft_pa(A, &B, &info);
 	free(info);
 	return (A);
 }
 
-t_stack	*quicksort(t_stack *A, t_stack *B)
+t_stack	*quicksort(t_stack *A, t_stack *B, t_info *info)
 {
 	t_stack	*temp;
 
 	while (!is_sorted(A, 1))
 	{
 		if (A->content > A->next->content)
-			A = ft_sa(A);
+			A = ft_sa(A, info);
 		temp = A->next;
 		if (!is_sorted(A, 1))
 		{
 			if (temp->content > temp->next->content)
-				A = ft_rra(A);
+				A = ft_rra(A, info);
 			else
-				A = ft_ra(B);
+				A = ft_ra(B, info);
 		}
 	}
 	return (A);

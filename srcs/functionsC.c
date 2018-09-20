@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-t_stack	*ft_sa(t_stack *A)
+t_stack	*ft_sa(t_stack *A, t_info *info)
 {
 	int		val;
 	t_stack	*temp;
 
-	if (!A)
+	if (!A || !info)
 		return (NULL);
 	if (A->next)
 	{
@@ -29,12 +29,12 @@ t_stack	*ft_sa(t_stack *A)
 	return (A);
 }
 
-t_stack	*ft_sb(t_stack *B)
+t_stack	*ft_sb(t_stack *B, t_info *info)
 {
 	int		val;
 	t_stack	*temp;
 
-	if (!B)
+	if (!B || !info)
 		return (NULL);
 	if (B->next)
 	{
@@ -46,9 +46,9 @@ t_stack	*ft_sb(t_stack *B)
 	return (B);
 }
 
-t_stack	*ft_ss(t_stack **A, t_stack *B)
+t_stack	*ft_ss(t_stack **A, t_stack *B, t_info *info)
 {
-	*A = ft_sa(*A);
-	B = ft_sb(B);
+	*A = ft_sa(*A, info);
+	B = ft_sb(B, info);
 	return (B);
 }
